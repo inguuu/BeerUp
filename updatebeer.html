@@ -1,0 +1,75 @@
+<?php 
+   session_start();
+   ob_start();
+?>
+<!DOCTYPE HTML>
+<!--
+	Dopetrope by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Beer up</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+<body class="homepage">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header-wrapper">
+					<div id="header">
+
+						<!-- Logo -->
+							<h1><a href="index.html">BeerUp</a></h1>
+
+						<!-- Nav -->
+							<nav id="nav">
+								<ul>
+									<li ><a href="main2.php">홈으로</a></li>
+									<?php
+	                                 if(!isset($_SESSION['id']))
+									 echo '<li><a href="loginform.html">로그인</a></li>';
+								     else
+										echo '<li><a href="logout.php">로그아웃</a></li>';
+							     	?>
+									<li><a href="signup.html">회원가입</a></li>
+									<li class="current"><a href="updatebeer.html">맥주정보관리</a></li>
+								</ul>
+							</nav>
+
+						<!-- Banner -->
+							
+
+						
+					</div>
+				</div>
+
+			
+
+			
+				
+
+<form method="post" enctype="multipart/form-data" action="updatebeer.php">
+ 
+	맥주이름:<br/>
+	<input type="text" name="name" placeholder="내용을 변경할 맥주 이름을 입력하세요">
+     도수:<br/>
+	<input type="text" name="name" placeholder="변경시에만 입력하세요">
+     가격:<br/>
+	<input type="text" name="name" placeholder="변경시에만 입력하세요">
+	<br/>
+    <br/>
+	<br/>
+	<br/>
+	
+	<input type="submit" value="맥주 변경"/>
+	
+	</form>
+</body>
+</html>
+	
